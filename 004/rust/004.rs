@@ -12,8 +12,8 @@ fn is_palindrome(mut value: u32) -> bool {
     let mid = digits / 2;
     let mut current = 0;
     while current < mid {
-        let mut right = (10 as u32).pow(current + 1);
-        let mut left = (10 as u32).pow(digits - (current + 1));
+        let right = (10 as u32).pow(current + 1);
+        let left = (10 as u32).pow(digits - (current + 1));
 
         let left_digit = (value / left) % 10;
         let right_digit = (value % right) / (10 as u32).pow(current);
