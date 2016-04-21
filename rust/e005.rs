@@ -8,8 +8,7 @@ fn divisible(value: u64) -> bool {
     return true;
 }
 
-
-fn main() {
+pub fn euler() -> u64 {
     let mut value = 20u64;
     loop {
         if divisible(value) {
@@ -17,5 +16,10 @@ fn main() {
         }
         value += 20;
     }
-    println!("Value: {}", value);
+    return value;
+}
+
+#[allow(dead_code)]
+fn main() {
+    println!("{}", euler());
 }

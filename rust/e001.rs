@@ -10,12 +10,17 @@ fn multiple_of_3_or_5(value: u64) -> bool {
     return multiple_of_int(value,3) || multiple_of_int(value,5);
 }
 
-fn main() {
+pub fn euler() -> u64{
     let mut total = 0;
     for n in 1..1000 {
         if multiple_of_3_or_5(n) {
             total += n;
         }
     }
-    println!("Total: {}", total);
+    return total;
+}
+
+#[allow(dead_code)]
+fn main() {
+    println!("{}", euler());
 }

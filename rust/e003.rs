@@ -23,7 +23,7 @@ fn is_prime(num: u64) -> bool {
 }
 
 
-fn main() {
+pub fn euler() -> u64 {
     let value: u64 = 600851475143;
     let root = (value as f64).sqrt() as u64;
     let mut largest_prime = 1;
@@ -34,5 +34,10 @@ fn main() {
         }
         cmp += 2;
     }
-    println!("Largest Factor: {}", largest_prime);
+    return largest_prime;
+}
+
+#[allow(dead_code)]
+fn main() {
+    println!("{}", euler());
 }

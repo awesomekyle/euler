@@ -1,5 +1,5 @@
 
-fn main() {
+pub fn euler() -> u64 {
     let mut total = 0;
     let mut last = 1;
     let mut current = 1;
@@ -12,5 +12,10 @@ fn main() {
         last = current;
         current = next;
     }
-    println!("Total: {}", total);
+    return total;
+}
+
+#[allow(dead_code)]
+fn main() {
+    println!("{}", euler());
 }
