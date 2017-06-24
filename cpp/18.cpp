@@ -42,10 +42,7 @@ std::string add(std::string const& a, std::string const& b)
 
 std::string multiplication(std::string const& a, std::string const& b)
 {
-    // std::stringstream out;
     std::string out;
-    int carry = 0;
-    int index = 0;
     for (auto c0 = b.rbegin(); c0 != b.rend(); ++c0) {
         int const x = dig(*c0);
         std::string tmp;
@@ -58,34 +55,29 @@ std::string multiplication(std::string const& a, std::string const& b)
         int const trailing_zeros = c0 - b.rbegin();
         tmp.insert(tmp.end(), trailing_zeros, '0');
         out = add(out, tmp);
-        index++;
     }
-    // auto ret = out.str();
-    // std::reverse(ret.begin(), ret.end());
     return out;
 }
 
-// uint64_t factorial(uint64_t val)
-//{
-//    if (val == 1) {
-//        return 1;
-//    }
-//    return val * factorial(val - 1);
-//}
-//
-// uint64_t digit_summer(uint64_t val)
-//{
-//    if (val == 0) {
-//        return 0;
-//    }
-//    return (val % 10) + digit_summer(val / 10);
-//}
+std::string factorial(std::string const& val, std::string const& max)
+{
+    if (val == max) {
+        return max;
+    }
+    return multiplication(val, factorial(add(val, "1"), max));
+}
+uint64_t digit_summer(std::string const& val)
+{
+    uint64_t sum = 0;
+    for (auto const c : val) {
+        sum += dig(c);
+    }
+    return sum;
+}
 
 int main()
 {
-    //    uint64_t const fac = factorial(100);
-    //    std::cout << digit_summer(fac) << "\n";
-    std::cout << multiplication("423", "211");
-    std::cout << add("12345", "123");
+    std::string const fac = factorial("1", "100");
+    std::cout << digit_summer(fac) << "\n";
     return 0;
 }
