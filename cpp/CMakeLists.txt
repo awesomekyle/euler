@@ -16,3 +16,4 @@ add_custom_command(TARGET large-number-test
 add_executable(17 17.cpp)
 add_executable(20 20.cpp)
 add_executable(21 21.cpp)
+add_executable(22 22.cpp)
