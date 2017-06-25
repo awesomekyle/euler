@@ -20,4 +20,5 @@ add_executable(22 22.cpp)
 add_executable(23 23.cpp)
 add_executable(24 24.cpp)
 add_executable(25 25.cpp)
-add_executable(26 26.cpp)
+add_executable(26 26.cpp) # WIP
+add_executable(27 27.cpp)
